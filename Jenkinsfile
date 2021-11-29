@@ -7,14 +7,7 @@ pipeline {
         EC2_INI_PATH="ansible-jobs/inventory/ec2.ini"
     }
 
-    stages {
-
-        stage('CREATE VPC') {
-            steps { 
-                 sh 'sh scripts/VpcAutomationScript.sh'
-           }
-        }         
-
+    stages { 
         stage('CREATE REMOTE SERVERS') {
             steps { 
                  sh 'sh scripts/RemoteServersAutomationScript.sh'
